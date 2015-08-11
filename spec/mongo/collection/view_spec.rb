@@ -147,6 +147,10 @@ describe Mongo::Collection::View do
           expect(returned.count).to eq(5)
         end
 
+        it 'documents count is integer' do
+          expect(returned.count.is_a?(Integer)).to be_truthy
+        end
+
         it 'iterates over all of the documents' do
           returned.each do |doc|
             expect(doc).to have_key('field')
@@ -172,6 +176,10 @@ describe Mongo::Collection::View do
           expect(returned.count).to eq(10)
         end
 
+        it 'documents count is integer' do
+          expect(returned.count.is_a?(Integer)).to be_truthy
+        end
+
         it 'iterates over all of the documents' do
           returned.each do |doc|
             expect(doc).to have_key('field')
@@ -187,6 +195,10 @@ describe Mongo::Collection::View do
 
         it 'returns all the documents' do
           expect(returned.count).to eq(10)
+        end
+
+        it 'documents count is integer' do
+          expect(returned.count.is_a?(Integer)).to be_truthy
         end
 
         it 'iterates over all of the documents' do
@@ -214,6 +226,10 @@ describe Mongo::Collection::View do
           expect(returned.count).to eq(3)
         end
 
+        it 'documents count is integer' do
+          expect(returned.count.is_a?(Integer)).to be_truthy
+        end
+
         it 'iterates over all of the documents' do
           returned.each do |doc|
             expect(doc).to have_key('field')
@@ -237,6 +253,10 @@ describe Mongo::Collection::View do
 
         it 'returns the limit of documents' do
           expect(returned.count).to eq(5)
+        end
+
+        it 'documents count is integer' do
+          expect(returned.count.is_a?(Integer)).to be_truthy
         end
 
         it 'iterates over all of the documents' do

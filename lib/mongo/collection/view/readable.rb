@@ -136,7 +136,7 @@ module Mongo
           cmd[:hint] = options[:hint] if options[:hint]
           cmd[:limit] = options[:limit] if options[:limit]
           cmd[:maxTimeMS] = options[:max_time_ms] if options[:max_time_ms]
-          database.command(cmd, options).n
+          database.command(cmd, options).n.to_i
         end
 
         # Get a list of distinct values for a specific field.
